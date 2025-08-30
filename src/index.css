@@ -1,0 +1,79 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --background: 222 47% 6%; /* Near black with a hint of blue */
+  --foreground: 210 40% 98%;
+
+  --card: 222 47% 11%; /* #111827 - Cool dark blue-gray */
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222 47% 6%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 221 83% 60%; /* Brighter, more vibrant blue */
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 222 47% 18%; /* Darker shade for active/hover states */
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 222 47% 11%;
+  --muted-foreground: 220 14% 65%;
+  
+  --accent: 222 47% 18%;
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 222 47% 15%; /* Subtle border color */
+  --input: 222 47% 11%;
+  --ring: 221 83% 60%;
+
+  --radius: 0.75rem; /* Slightly larger radius for a modern look */
+  
+  --brand-blue: 222 47% 21%; /* #172554 */
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  * {
+    @apply border-border;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+.main-bg-gradient {
+  background-color: hsl(var(--background));
+  background-image: 
+    radial-gradient(at 15% 15%, hsl(var(--primary) / 0.15) 0px, transparent 50%),
+    radial-gradient(at 85% 90%, hsl(var(--brand-blue) / 0.2) 0px, transparent 50%);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-white to-gray-400;
+}
+
+.hero-gradient {
+  background: linear-gradient(145deg, hsl(var(--primary)), hsl(var(--brand-blue)));
+}
+
+.glow-effect {
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px -4px hsl(var(--primary) / 0.08);
+}
